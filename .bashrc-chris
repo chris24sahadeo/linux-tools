@@ -1,3 +1,5 @@
+alias bashrc='source ~/.bashrc'
+
 # Add git branch if its present to PS1
 # Uncomment lines in .bashrc as specified here: https://askubuntu.com/questions/730754/how-do-i-show-the-git-branch-with-colours-in-bash-prompt
 parse_git_branch() {
@@ -11,6 +13,17 @@ fi
 
 # Reach.
 REACH_ROOT=~/project-reach
-alias rcd='cd ${REACH_ROOT}'
+function rcd {
+    # echo "$REACH_ROOT/$1"
+    cd "${REACH_ROOT}/$1"
+}
+
+alias rcode='rcd && code .'
+alias rgo='cd ${REACH_ROOT}/go/src/project-reach && code .'
+alias rpush='git push origin HEAD:refs/for/master'
 
 . ${REACH_ROOT}/setenv.sh
+
+# Other aliases.
+alias gcan='git commit --amend --no-edit'
+alias ping='ping -c 5'
