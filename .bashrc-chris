@@ -12,18 +12,34 @@ else
 fi
 
 # Reach.
-REACH_ROOT=~/project-reach
+MY_REACH_ROOT=~/virtana/project-reach
 function rcd {
-    # echo "$REACH_ROOT/$1"
-    cd "${REACH_ROOT}/$1"
+    # echo "$MY_REACH_ROOT/$1"
+    cd "${MY_REACH_ROOT}/$1"
 }
 
-alias rcode='rcd && code .'
-alias rgo='cd ${REACH_ROOT}/go/src/project-reach && code .'
+alias rc='rcd && code .'
+alias rgo='rcd go/src/project-reach && code .'
 alias rpush='git push origin HEAD:refs/for/master'
+alias rls='reach ls'
+alias gcloud-start='gcloud compute instances start calibration-sim-02'
+alias gcloud-stop='gcloud compute instances stop calibration-sim-02'
+alias gcloud-status='gcloud compute instances describe calibration-sim-02 | grep status'
 
-. ${REACH_ROOT}/setenv.sh
+. ${MY_REACH_ROOT}/setenv.sh
 
 # Other aliases.
 alias gcan='git commit --amend --no-edit'
+alias gb='git branch'
+alias gbd='git branch -D'
+alias gk='gitk --all'
+alias ga='git add'
+alias gc='git commit'
+alias gcm='git commit -m'
+alias gch='git checkout'
+alias gchb='git checkout -b'
+alias gs='git status'
+
 alias ping='ping -c 5'
+alias unity='~/UnityHub.AppImage'
+alias bashrc='. ~/.bashrc && echo ".bashrc reloaded!"'
