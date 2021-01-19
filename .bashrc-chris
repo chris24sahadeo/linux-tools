@@ -11,24 +11,7 @@ else
  PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w$(parse_git_branch)\$ '
 fi
 
-# Reach.
-MY_REACH_ROOT=~/virtana/project-reach
-function rcd {
-    # echo "$MY_REACH_ROOT/$1"
-    cd "${MY_REACH_ROOT}/$1"
-}
-
-alias rc='rcd && code .'
-alias rgo='rcd go/src/project-reach && code .'
-alias rpush='git push origin HEAD:refs/for/master'
-alias rls='reach ls'
-alias gcloud-start='gcloud compute instances start calibration-sim-02'
-alias gcloud-stop='gcloud compute instances stop calibration-sim-02'
-alias gcloud-status='gcloud compute instances describe calibration-sim-02 | grep status'
-
-. ${MY_REACH_ROOT}/setenv.sh
-
-# Other aliases.
+# Aliases.
 alias gcan='git commit --amend --no-edit'
 alias gb='git branch'
 alias gbd='git branch -D'
@@ -43,7 +26,31 @@ alias gph='git push'
 alias gpl='git pull'
 alias gd='git diff'
 
+# cd and list directories
+function cl {
+  cd $1 && ll
+}
+
+# alias cd='cd && ll'
 alias rm='rm -rf'
 alias ping='ping -c 5'
 alias unity='~/UnityHub.AppImage'
 alias bashrc='. ~/.bashrc && echo ".bashrc reloaded!"'
+
+# Reach.
+MY_REACH_ROOT=~/virtana/project-reach
+function rcd {
+    # echo "$MY_REACH_ROOT/$1"
+    cl "${MY_REACH_ROOT}/$1"
+}
+
+alias rc='rcd && code .'
+alias rgo='rcd go/src/project-reach && code .'
+alias rpush='git push origin HEAD:refs/for/master'
+alias rls='reach ls'
+alias gcloud-start='gcloud compute instances start calibration-sim-02'
+alias gcloud-stop='gcloud compute instances stop calibration-sim-02'
+alias gcloud-status='gcloud compute instances describe calibration-sim-02 | grep status'
+
+. ${MY_REACH_ROOT}/setenv.sh
+
