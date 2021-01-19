@@ -41,6 +41,7 @@ alias bashrc='. ~/.bashrc && echo ".bashrc reloaded!"'
 
 # Reach.
 export MY_REACH_ROOT=~/virtana/project-reach
+export GO_PROJ_DIR=$MY_REACH_ROOT/go/src/project-reach
 export CDPATH=$MY_REACH_ROOT:.
 
 function rcd {
@@ -56,14 +57,15 @@ function rm-meta {
   cd $saved_dir
 }
 
-
 function jira {
-  google-chrome https://project-reach.atlassian.net/browse/$1
+  
+  google-chrome https://project-reach.atlassian.net/browse/VIS-$1
 }
 
-alias rc='rcd && code .'
-alias rgo='rcd go/src/project-reach && code .'
-alias rpush='git push origin HEAD:refs/for/master'
+alias rc='code $MY_REACH_ROOT'
+alias cdgo='cd $GO_PROJ_DIR'
+alias rcgo='code $GO_PROJ_DIR'
+alias rph='git push origin HEAD:refs/for/master'
 alias rls='reach ls'
 alias gcloud-start='gcloud compute instances start calibration-sim-02'
 alias gcloud-stop='gcloud compute instances stop calibration-sim-02'
