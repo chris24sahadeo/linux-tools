@@ -42,7 +42,7 @@ alias bashrc='. ~/.bashrc && echo ".bashrc reloaded!"'
 # Reach.
 export MY_REACH_ROOT=~/virtana/project-reach
 export GO_PROJ_DIR=$MY_REACH_ROOT/go/src/project-reach
-export CDPATH=$MY_REACH_ROOT:.
+export CDPATH=$MY_REACH_ROOT:~:.
 
 function rcd {
     # echo "$MY_REACH_ROOT/$1"
@@ -50,7 +50,7 @@ function rcd {
 }
 
 function rm-meta {
-  saved_dir=pwd
+  saved_dir=`pwd`
   rcd
   gch -- ReachSimUnity/Assets/Materials/Blue.mat.meta ReachSimUnity/Assets/Materials/Red.mat.meta
   rm ReachSimUnity/Assets/Materials/BLUE.MAT.meta ReachSimUnity/Assets/Materials/RED.MAT.meta ReachSimUnity/Assets/Scenes/Experiments/robot-creds.json.meta ReachSimUnity/calibration_v20200302.json SharedUnityAssets/Scripts/RC/Geometries.cs.meta SharedUnityAssets/Scripts/RC/Tests.meta SharedUnityAssets/Scripts/RC/Tests/GeometriesTest.cs.meta SharedUnityAssets/Scripts/RC/Tests/Tests.asmdef.meta SharedUnityAssets/Scripts/RC/TypesGen.cs.meta
@@ -58,7 +58,7 @@ function rm-meta {
 }
 
 function jira {
-  
+
   google-chrome https://project-reach.atlassian.net/browse/VIS-$1
 }
 
