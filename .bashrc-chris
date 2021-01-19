@@ -1,5 +1,7 @@
 alias bashrc='source ~/.bashrc'
 
+# source /etc/profile.d/bash_completion.sh
+
 # Add git branch if its present to PS1
 # Uncomment lines in .bashrc as specified here: https://askubuntu.com/questions/730754/how-do-i-show-the-git-branch-with-colours-in-bash-prompt
 parse_git_branch() {
@@ -39,9 +41,10 @@ alias bashrc='. ~/.bashrc && echo ".bashrc reloaded!"'
 
 # Reach.
 MY_REACH_ROOT=~/virtana/project-reach
+export CDPATH=$MY_REACH_ROOT:.
 function rcd {
     # echo "$MY_REACH_ROOT/$1"
-    cl "${MY_REACH_ROOT}/$1"
+    cl ${MY_REACH_ROOT}/$1
 }
 
 alias rc='rcd && code .'
