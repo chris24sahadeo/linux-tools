@@ -40,11 +40,16 @@ alias unity='~/UnityHub.AppImage'
 alias bashrc='. ~/.bashrc && echo ".bashrc reloaded!"'
 
 # Reach.
-MY_REACH_ROOT=~/virtana/project-reach
+export MY_REACH_ROOT=~/virtana/project-reach
 export CDPATH=$MY_REACH_ROOT:.
+
 function rcd {
     # echo "$MY_REACH_ROOT/$1"
     cl ${MY_REACH_ROOT}/$1
+}
+
+function jira {
+  google-chrome https://project-reach.atlassian.net/browse/$1
 }
 
 alias rc='rcd && code .'
