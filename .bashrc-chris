@@ -13,6 +13,16 @@ else
  PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w$(parse_git_branch)\$ '
 fi
 
+function chrome-work {
+  google-chrome --new-window https://minutedock.com/entries 
+  google-chrome --new-window \
+    https://sneek.io/app/virtana \
+    https://chat.google.com/room/AAAAS8gU-BI \
+    https://calendar.google.com/calendar/u/0/r/week \
+    https://mail.google.com/mail/u/0/?tab=rm1#inbox \
+    https://www.notion.so/15dbb08ff443440d9ef812fbb08d2414?v=a8f93552c10e4c95941316b85e212614 
+}
+
 # Aliases.
 alias gcan='git commit --amend --no-edit'
 alias gb='git branch'
@@ -72,7 +82,6 @@ function rm-meta {
 }
 
 function jira {
-
   google-chrome https://project-reach.atlassian.net/browse/VIS-$1
 }
 
@@ -86,4 +95,3 @@ alias gcloud-stop='gcloud compute instances stop calibration-sim-02'
 alias gcloud-status='gcloud compute instances describe calibration-sim-02 | grep status'
 
 . ${MY_REACH_ROOT}/setenv.sh
-
