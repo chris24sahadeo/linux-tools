@@ -33,11 +33,14 @@ function cl {
   cd $1 && ll
 }
 
-# alias cd='cd && ll'
+alias grep='grep -i'
 alias rm='rm -rf'
 alias ping='ping -c 5'
 alias unity='~/UnityHub.AppImage'
+alias psunity='ps -je | grep unity'
 alias bashrc='. ~/.bashrc && echo ".bashrc reloaded!"'
+
+alias q3='cd ~/Q3 && ./start'
 
 # Reach.
 export MY_REACH_ROOT=~/virtana/project-reach
@@ -64,7 +67,7 @@ function rm-meta {
     SharedUnityAssets/Scripts/RC/TypesGen.cs.meta \
     ReachSimUnity/Assets/Scenes/CalibrationTestingSettings.lighting.meta \
     ReachSimUnity/Assets/Scenes/Experiments/robot-creds.json
-    
+
   cd $saved_dir
 }
 
