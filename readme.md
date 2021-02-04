@@ -1,5 +1,14 @@
 # Installation
 ```bash
-git clone git@github.com:chris24sahadeo/.bashrc-chris.git ~ && \
-echo '. ~/.bashrc-chris/.bashrc-chris' >> ~/.bashrc
+# Clone into home.
+cd ~/Desktop && \
+git clone git@github.com:chris24sahadeo/.bashrc-chris.git && \
+
+# Add to .bashrc.
+cat <<EOF >> ~/.bashrc
+
+
+# My bashrc extensions.
+~/.bashrc-chris/.bashrc-chris
+EOF
 ```
