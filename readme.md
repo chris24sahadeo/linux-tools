@@ -9,6 +9,6 @@ cat <<EOF >> ~/.bashrc
 
 
 # My bashrc extensions.
-~/.bashrc-chris/.bashrc-chris
+. ~/.bashrc-chris/.bashrc-chris
 EOF
 ```
