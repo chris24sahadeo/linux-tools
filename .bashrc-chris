@@ -98,13 +98,15 @@ function jira {
   fi
 }
 
+MY_SIM=calibration-sim-02
 alias rc='code $MY_REACH_ROOT'
 alias cdgo='cd $GO_PROJ_DIR'
 alias rcgo='code $GO_PROJ_DIR'
 alias rph='git push origin HEAD:refs/for/master'
 alias rls='reach ls'
-alias gcloud-start='gcloud compute instances start calibration-sim-02'
-alias gcloud-stop='gcloud compute instances stop calibration-sim-02'
-alias gcloud-status='gcloud compute instances describe calibration-sim-02 | grep status'
+alias r-status='while true; do rls | grep ${MY_SIM}; done'
+alias gcloud-start='gcloud compute instances start ${MY_SIM}'
+alias gcloud-stop='gcloud compute instances stop ${MY_SIM}'
+alias gcloud-status='gcloud compute instances describe ${MY_SIM} | grep status'
 
 . ${MY_REACH_ROOT}/setenv.sh
