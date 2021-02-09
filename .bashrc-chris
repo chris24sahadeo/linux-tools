@@ -13,9 +13,11 @@ else
  PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w$(parse_git_branch)\$ '
 fi
 
+alias chrome='google-chrome'
+
 function chrome-work {
-  google-chrome --new-window https://minutedock.com/entries 
-  google-chrome --new-window \
+  chrome --new-window https://minutedock.com/entries 
+  chrome --new-window \
     https://sneek.io/app/virtana \
     https://chat.google.com/room/AAAAS8gU-BI \
     https://calendar.google.com/calendar/u/0/r/week \
@@ -84,7 +86,16 @@ function rm-meta {
 }
 
 function jira {
-  google-chrome https://project-reach.atlassian.net/browse/VIS-$1
+  if [ $# -eq 0 ]  # If no args then open the board.
+  then
+    chrome https://project-reach.atlassian.net/jira/software/projects/VIS/boards/32
+  else  # Else open each ticket # in a different window.
+    ticket_numbers=($@)
+    for ticket_number in ${ticket_numbers[@]}
+    do
+      chrome https://project-reach.atlassian.net/browse/VIS-${ticket_number}
+    done
+  fi
 }
 
 alias rc='code $MY_REACH_ROOT'
