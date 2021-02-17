@@ -85,17 +85,25 @@ function rm-meta {
   cd $saved_dir
 }
 
+re_num='^[0-9]+$'
 function jira {
-  if [ $# -eq 0 ]  # If no args then open the board.
+  if [ $# -eq 0 ]  # If no args then open the VIS board.
   then
     chrome https://project-reach.atlassian.net/jira/software/projects/VIS/boards/32
-  else  # Else open each ticket # in a different window.
-    ticket_numbers=($@)
-    for ticket_number in ${ticket_numbers[@]}
-    do
-      chrome https://project-reach.atlassian.net/browse/VIS-${ticket_number}
-    done
+    return 0
+  elif ! [[ $1 =~ $re_num ]] ; then # Check if key specified (first param is NAN).
+    jira_key=$1
+    shift  # Remove key from arg list.
+  else  # Else, assume key is VIS.
+    jira_key='VIS'
   fi
+
+  # Open each ticket # in a different tab.
+  ticket_numbers=($@)
+  for ticket_number in ${ticket_numbers[@]}
+  do
+    chrome https://project-reach.atlassian.net/browse/${jira_key}-${ticket_number}
+  done
 }
 
 MY_SIM=calibration-sim-02
