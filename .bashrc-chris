@@ -15,13 +15,13 @@ fi
 
 alias chrome='google-chrome'
 
-function chrome-work {
+function virtana-chrome {
+  chrome --new-window https://mail.google.com/mail/u/0/?tab=rm1#inbox
+  chrome --new-window https://chat.google.com/room/AAAAS8gU-BI
   chrome --new-window https://minutedock.com/entries 
   chrome --new-window \
-    https://sneek.io/app/virtana \
-    https://chat.google.com/room/AAAAS8gU-BI \
     https://calendar.google.com/calendar/u/0/r/week \
-    https://mail.google.com/mail/u/0/?tab=rm1#inbox \
+    https://sneek.io/app/virtana \
     https://www.notion.so/15dbb08ff443440d9ef812fbb08d2414?v=a8f93552c10e4c95941316b85e212614 
 }
 
