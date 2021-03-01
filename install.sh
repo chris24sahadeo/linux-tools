@@ -1,5 +1,6 @@
 readonly THIS_SCRIPT_DIR="$(SHELL_SESSION_FILE= && cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
+# Make the linux .bashrc call our custom .bashrc.
 cat <<EOF >> ~/.bashrc
 
 
