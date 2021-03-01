@@ -15,14 +15,14 @@ fi
 
 alias chrome='google-chrome'
 
-function chrome-work {
-  chrome --new-window https://minutedock.com/entries 
+function vchrome {
+  chrome --new-window https://mail.google.com/mail/u/0/?tab=rm1#inbox
+  chrome --new-window https://chat.google.com/room/AAAAS8gU-BI
+  chrome --new-window https://minutedock.com/entries
   chrome --new-window \
-    https://sneek.io/app/virtana \
-    https://chat.google.com/room/AAAAS8gU-BI \
     https://calendar.google.com/calendar/u/0/r/week \
-    https://mail.google.com/mail/u/0/?tab=rm1#inbox \
-    https://www.notion.so/15dbb08ff443440d9ef812fbb08d2414?v=a8f93552c10e4c95941316b85e212614 
+    https://sneek.io/app/virtana
+  chrome --new-window  https://www.notion.so/15dbb08ff443440d9ef812fbb08d2414?v=a8f93552c10e4c95941316b85e212614 
 }
 
 # Aliases.
@@ -51,11 +51,14 @@ alias ping='ping -c 5'
 alias unity='~/UnityHub.AppImage'
 alias psunity='ps -je | grep unity'
 alias bashrc='. ~/.bashrc && echo ".bashrc reloaded!"'
-alias cbashrc='code $THIS_SCRIPT_DIR'
+alias linux='code $THIS_SCRIPT_DIR'
 
 alias q3='cd ~/Q3 && ./start'
 
 alias speedtest='speedtest --server 13934'  # Always test with Flow chaguanas.
+
+alias reboot='sudo reboot now'
+alias shutdown='sudo shutdown now'
 
 # Reach.
 export MY_REACH_ROOT=~/project-reach
@@ -86,18 +89,26 @@ function rm-meta {
   cd $saved_dir
 }
 
+re_num='^[0-9]+$'
 function jira {
-  if [ $# -eq 0 ]  # If no args then open the board.
+  if [ $# -eq 0 ]  # If no args then open the VIS board.
   then
     chrome https://project-reach.atlassian.net/jira/software/projects/VIS/boards/32
-  else  # Else open each ticket # in a different window.
-    ticket_numbers=($@)
-    for ticket_number in ${ticket_numbers[@]}
-    do
-      chrome https://project-reach.atlassian.net/browse/VIS-${ticket_number}
-    done
-  fi
-}
+    return 0
+  elif ! [[ $1 =~ $re_num ]] ; then # Check if key specified (first param is NAN).
+    jira_key=$1
+    shift  # Remove key from arg list.
+  else  # Else, assume key is VIS.
+    jira_key='VIS'
+   fi
+
+  # Open each ticket # in a different tab.
+  ticket_numbers=($@)
+  for ticket_number in ${ticket_numbers[@]}
+  do
+    chrome https://project-reach.atlassian.net/browse/${jira_key}-${ticket_number}
+  done
+ }
 
 MY_SIM=calibration-sim-02
 alias rc='code $MY_REACH_ROOT'
