@@ -7,4 +7,6 @@ cat <<EOF >> ~/.bashrc
 . $THIS_SCRIPT_DIR/.bashrc
 EOF
 
+# Vim looks for .vimrc in the $HOME directory.
+# A simlink is a nice way for .vim to find the file, while we still track in it git.
 ln -s $THIS_SCRIPT_DIR/.vimrc ~/.vimrc
