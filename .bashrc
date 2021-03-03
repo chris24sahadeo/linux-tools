@@ -75,8 +75,7 @@ function rm-meta {
   rcd
   gch -- ReachSimUnity/Assets/Materials/Blue.mat.meta ReachSimUnity/Assets/Materials/Red.mat.meta
 
-  rm ReachSimUnity/Assets/Materials/BLUE.MAT.meta \
-    ReachSimUnity/Assets/Materials/RED.MAT.meta \
+  rm \
     ReachSimUnity/Assets/Scenes/Experiments/robot-creds.json.meta \
     ReachSimUnity/calibration_v20200302.json \
     SharedUnityAssets/Scripts/RC/Geometries.cs.meta SharedUnityAssets/Scripts/RC/Tests.meta \
