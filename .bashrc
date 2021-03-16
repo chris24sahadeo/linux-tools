@@ -39,6 +39,7 @@ alias gs='git status'
 alias gph='git push'
 alias gpl='git pull'
 alias gd='git diff'
+alias gr='git rebase -i'
 
 # cd and list directories
 function cl {
