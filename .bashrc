@@ -59,7 +59,7 @@ alias q3='cd ~/Q3 && ./start'
 alias speedtest='speedtest --server 13934'  # Always test with Flow chaguanas.
 
 alias reboot='sudo reboot now'
-alias shutdown='sudo shutdown now'
+alias off='sudo shutdown now'
 
 # Reach.
 export MY_REACH_ROOT=~/project-reach
