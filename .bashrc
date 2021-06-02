@@ -85,7 +85,8 @@ function rm-meta {
     SharedUnityAssets/Scripts/RC/TypesGen.cs.meta \
     ReachSimUnity/Assets/Scenes/CalibrationTestingSettings.lighting.meta \
     ReachSimUnity/Assets/Scenes/Experiments/robot-creds.json \
-    ../../ReachSimUnity/Assets/Scenes/CalibrationTestingSettings.lighting
+    ReachSimUnity/Assets/Scenes/CalibrationTestingSettings.lighting \
+    SharedUnityAssets/Models.meta
 
 
   cd $saved_dir
