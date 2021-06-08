@@ -125,3 +125,6 @@ alias gcloud-stop='gcloud compute instances stop ${MY_SIM}'
 alias gcloud-status='gcloud compute instances describe ${MY_SIM} | grep status'
 
 . ${MY_REACH_ROOT}/setenv.sh
+
+# Adding camera binaries to python path to help with vscode symbols and execution.
+export PYTHONPATH="${PYTHONPATH}":${MY_REACH_ROOT}/vision/cameras/python
