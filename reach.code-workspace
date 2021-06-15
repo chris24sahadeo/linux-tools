@@ -1,13 +1,19 @@
 {
 	"folders": [
     {
-      "path": "../project-reach"
+      "path": "../project-reach",
+      "name": "reach"
     },
     {
-      "path": "../project-reach/go/src/project-reach"
+      "path": "../project-reach/go/src/project-reach",
+      "name": "go"
     },
     {
-      "path": "../project-reach/vision/cameras/python"
+      "path": "../project-reach/vision/cameras/python",
+      "name": "python_camera"
     }
-  ]
+  ],
+  "settings": {
+    // "terminal.integrated.cwd": "~/project-reach"
+  }
 }
