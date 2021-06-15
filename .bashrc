@@ -114,9 +114,9 @@ function jira {
  }
 
 MY_SIM=calibration-sim-02
-alias rc='code $MY_REACH_ROOT'
-alias cdgo='cd $GO_PROJ_DIR'
-alias rcgo='code $GO_PROJ_DIR'
+# alias rc='code $MY_REACH_ROOT'
+# alias cdgo='cd $GO_PROJ_DIR'
+# alias rcgo='code $GO_PROJ_DIR'
 alias rph='git push origin HEAD:refs/for/master'
 alias rls='reach ls'
 alias r-status='while true; do rls | grep ${MY_SIM}; done'
@@ -127,4 +127,4 @@ alias gcloud-status='gcloud compute instances describe ${MY_SIM} | grep status'
 . ${MY_REACH_ROOT}/setenv.sh
 
 # Adding camera binaries to python path to help with vscode symbols and execution.
-export PYTHONPATH="${PYTHONPATH}":${MY_REACH_ROOT}/vision/cameras/python
+# export PYTHONPATH="${PYTHONPATH}":${MY_REACH_ROOT}/vision/cameras/python

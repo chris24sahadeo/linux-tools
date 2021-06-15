@@ -1,0 +1,13 @@
+{
+	"folders": [
+    {
+      "path": "../project-reach"
+    },
+    {
+      "path": "../project-reach/go/src/project-reach"
+    },
+    {
+      "path": "../project-reach/vision/cameras/python"
+    }
+  ]
+}
