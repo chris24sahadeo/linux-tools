@@ -115,7 +115,7 @@ function jira {
  }
 
 MY_SIM=calibration-sim-02
-# alias rc='code $MY_REACH_ROOT'
+alias rc='code $THIS_SCRIPT_DIR/reach.code-workspace'
 # alias cdgo='cd $GO_PROJ_DIR'
 # alias rcgo='code $GO_PROJ_DIR'
 alias rph='git push origin HEAD:refs/for/master'
