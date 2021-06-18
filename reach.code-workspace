@@ -14,6 +14,7 @@
     }
   ],
   "settings": {
+    "python.pythonPath": "/home/chris/miniconda3/bin/python"
     // "terminal.integrated.cwd": "~/project-reach"
   }
 }

@@ -40,6 +40,7 @@ alias gph='git push'
 alias gpl='git pull'
 alias gd='git diff'
 alias gr='git rebase -i'
+alias grhh='git reset --hard HEAD'
 
 # cd and list directories
 function cl {
