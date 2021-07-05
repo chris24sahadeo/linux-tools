@@ -48,7 +48,7 @@ function cl {
 }
 
 alias grep='grep -i'
-alias rm='rm -rf'
+alias rm='rm -rfv'
 alias ping='ping -c 5'
 alias unity='~/UnityHub.AppImage'
 alias psunity='ps -jef | grep -i unity'
@@ -69,6 +69,7 @@ alias off='sudo shutdown now'
 export MY_REACH_ROOT=~/project-reach
 export GO_PROJ_DIR=$MY_REACH_ROOT/go/src/project-reach
 export CDPATH=$MY_REACH_ROOT:~:.
+export WEBRTC_FPATH="${MY_REACH_ROOT}"/go/webrtc_headless
 
 function rcd {
     # echo "$MY_REACH_ROOT/$1"
@@ -123,6 +124,8 @@ alias rc='code $THIS_SCRIPT_DIR/reach.code-workspace'
 # alias rcgo='code $GO_PROJ_DIR'
 alias rph='git push origin HEAD:refs/for/master'
 alias rls='reach ls'
+alias reach-connect='reach connect --webrtc_headless="${WEBRTC_FPATH}"'
+alias reach-serve='reach serve --webrtc_headless="${WEBRTC_FPATH}"'
 alias r-status='while true; do rls | grep ${MY_SIM}; done'
 alias gcloud-start='gcloud compute instances start ${MY_SIM}'
 alias gcloud-stop='gcloud compute instances stop ${MY_SIM}'
