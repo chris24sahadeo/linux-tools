@@ -58,7 +58,9 @@ alias linux='code $THIS_SCRIPT_DIR'
 
 alias q3='cd ~/Q3 && ./start'
 
-alias speedtest='speedtest --server 13934'  # Always test with Flow chaguanas.
+alias speedtest-tt='speedtest -s 13934'  # Flow Chaguanas.
+alias speedtest-sf='speedtest -s 1783'  # Comcast, San Francisco.
+alias speedtest-ber='speedtest -s 20507'  # DNS:NET Internet Service GmbH, Berlin.
 
 alias reboot='sudo reboot now'
 alias off='sudo shutdown now'
@@ -129,4 +131,9 @@ alias gcloud-status='gcloud compute instances describe ${MY_SIM} | grep status'
 . ${MY_REACH_ROOT}/setenv.sh
 
 # Adding camera binaries to python path to help with vscode symbols and execution.
+# No longer required since we have the reach.code-workspace folder.
 # export PYTHONPATH="${PYTHONPATH}":${MY_REACH_ROOT}/vision/cameras/python
+
+# Adding workflow tools to path.
+WORKFLOW_TOOLS_DIR="${MY_REACH_ROOT}"/experimental/hirak/workflow_tools
+export PATH="${WORKFLOW_TOOLS_DIR}":"${PATH}"
