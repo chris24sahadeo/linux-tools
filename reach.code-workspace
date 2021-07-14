@@ -14,7 +14,8 @@
     }
   ],
   "settings": {
-    "python.pythonPath": "/home/chris/miniconda3/bin/python"
+    "python.pythonPath": "/home/chris/miniconda3/bin/python",
+    "git.ignoreLimitWarning": true
     // "terminal.integrated.cwd": "~/project-reach"
   }
 }

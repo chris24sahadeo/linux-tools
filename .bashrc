@@ -42,6 +42,10 @@ alias gd='git diff'
 alias gr='git rebase -i'
 alias grhh='git reset --hard HEAD'
 
+# List aliases.
+alias llh='ls -alF'
+alias llp='ll -d $PWD/*'
+
 # cd and list directories
 function cl {
   cd $1 && ll
