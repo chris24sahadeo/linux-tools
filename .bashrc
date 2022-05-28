@@ -72,7 +72,7 @@ alias off='sudo shutdown now'
 # Reach.
 export MY_REACH_ROOT=~/project-reach
 export GO_PROJ_DIR=$MY_REACH_ROOT/go/src/project-reach
-export CDPATH=$MY_REACH_ROOT:~:.
+# export CDPATH=$MY_REACH_ROOT:~:.
 export WEBRTC_FPATH="${MY_REACH_ROOT}"/go/webrtc_headless
 
 function rcd {
