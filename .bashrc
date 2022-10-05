@@ -67,3 +67,7 @@ alias speedtest-ber='speedtest -s 20507' # DNS:NET Internet Service GmbH, Berlin
 
 alias reboot='sudo reboot now'
 alias off='poweroff'
+
+enter () {
+  docker exec -it $1 /bin/bash
+}
