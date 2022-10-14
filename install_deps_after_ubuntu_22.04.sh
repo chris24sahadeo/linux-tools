@@ -16,6 +16,8 @@ install_vscode() {
   sudo apt install -y apt-transport-https
   sudo apt update
   sudo apt install -y code # or code-insiders
+
+  git config --global core.editor "code --wait"
 }
 
 # TODO(chris@)
@@ -53,11 +55,11 @@ install_git() {
 cd /tmp
 sudo apt update
 install_chrome
+install_git
 install_vscode
 install_stremio
 install_spotify
 install_utils
-install_git
 
 readonly BOLD_GREEN='\033[1;32m'
 readonly END_OF_FORMATTING='\033[0m'
