@@ -96,3 +96,4 @@ enter() {
 }
 
 alias dp='docker system prune -a'
+alias rsync='rsync --info=progress2 -a'
