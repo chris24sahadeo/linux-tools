@@ -41,6 +41,16 @@ alias gd='git diff'
 alias gr='git rebase -i'
 alias grhh='git reset --hard HEAD'
 
+gcho () {
+  local branch="$1"
+  gchb "${branch}" origin/"${branch}"
+}
+
+gbdo () {
+  local branch="$1"
+  git push -d origin "${branch}"
+}
+
 # List aliases.
 alias llh='ls -alF'
 alias llp='ll -d $PWD/*'
