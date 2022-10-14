@@ -32,7 +32,7 @@ install_spotify() {
 
 install_utils() {
   sudo add-apt-repository universe
-  sudo apt install -y hardinfo bashtop gnome-tweaks mesa-utils
+  sudo apt install -y hardinfo bashtop gnome-tweaks mesa-utils xclip
 
   # FIXME(chris@):
   # sudo apt install -y gnome-shell-extensions gnome-shell-extension-system-monitor
