@@ -41,12 +41,12 @@ alias gd='git diff'
 alias gr='git rebase -i'
 alias grhh='git reset --hard HEAD'
 
-gcho () {
+gcho() {
   local branch="$1"
   gchb "${branch}" origin/"${branch}"
 }
 
-gbdo () {
+gbdo() {
   local branch="$1"
   git push -d origin "${branch}"
 }
@@ -71,14 +71,27 @@ alias linux='code $THIS_SCRIPT_DIR'
 
 # alias q3='cd ~/Q3 && ./start'
 
-alias speedtest-tt='speedtest -s 13934'  # Flow Chaguanas.
-alias speedtest-sf='speedtest -s 1783'   # Comcast, San Francisco.
-alias speedtest-ber='speedtest -s 20507' # DNS:NET Internet Service GmbH, Berlin.
+st() {
+  if [[ $# -eq 0 ]]; then
+    echo here
+    location="tt"
+  else
+    location="$1"
+  fi
+
+  declare -A location_map=(
+    ["tt"]="13934"  # Flow Chaguanas.
+    ["sf"]="1783"   # Comcast, San Francisco.
+    ["ber"]="20507" # DNS:NET Internet Service GmbH, Berlin.
+  )
+
+  speedtest -s "${location_map[$location]}"
+}
 
 alias reboot='sudo reboot now'
 alias off='poweroff'
 
-enter () {
+enter() {
   docker exec -it $1 /bin/bash
 }
 
