@@ -32,7 +32,7 @@ install_spotify() {
 
 install_utils() {
   sudo add-apt-repository universe
-  sudo apt install -y hardinfo bashtop gnome-tweaks
+  sudo apt install -y hardinfo bashtop gnome-tweaks mesa-utils
 
   # FIXME(chris@):
   # sudo apt install -y gnome-shell-extensions gnome-shell-extension-system-monitor
@@ -52,12 +52,12 @@ install_git() {
 # Main.
 cd /tmp
 sudo apt update
-# install_chrome
-# install_vscode
-# install_stremio
-# install_spotify
+install_chrome
+install_vscode
+install_stremio
+install_spotify
 install_utils
-# install_git
+install_git
 
 readonly BOLD_GREEN='\033[1;32m'
 readonly END_OF_FORMATTING='\033[0m'
