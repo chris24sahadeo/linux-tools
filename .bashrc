@@ -81,3 +81,5 @@ alias off='poweroff'
 enter () {
   docker exec -it $1 /bin/bash
 }
+
+alias dp='docker system prune -a'
