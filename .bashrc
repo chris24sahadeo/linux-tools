@@ -66,7 +66,7 @@ alias ping='ping -c 5'
 alias unity='~/UnityHub.AppImage'
 alias psunity='ps -jef | grep -i unity'
 alias killunity='kill -9  $(psunity | awk '"'"'{print $2}'"'"')'
-alias bashrc='. ~/.bashrc && echo ".bashrc reloaded!"'
+alias brc='. ~/.bashrc && echo ".bashrc reloaded!"'
 alias linux='code $THIS_SCRIPT_DIR'
 
 # alias q3='cd ~/Q3 && ./start'
