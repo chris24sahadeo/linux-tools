@@ -37,7 +37,7 @@ install_utils() {
   sudo apt install -y hardinfo bashtop gnome-tweaks mesa-utils xclip
 
   # FIXME(chris@):
-  # sudo apt install -y gnome-shell-extensions gnome-shell-extension-system-monitor
+  sudo apt install -y gnome-shell-extensions gnome-shell-extension-system-monitor
 
   # Speedtest.
   sudo apt-get install -y curl
@@ -54,10 +54,10 @@ install_git() {
 # Main.
 cd /tmp
 sudo apt update
-install_chrome
-install_git
+#install_chrome
+#install_git
+#install_stremio
 install_vscode
-install_stremio
 install_spotify
 install_utils
 
