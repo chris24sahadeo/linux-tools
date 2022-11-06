@@ -100,7 +100,6 @@ enter() {
 
 alias dp='docker system prune -a'
 
-# 1667233886
 dcp () {
   vol_name=$1
   src_path_in_vol=$2
