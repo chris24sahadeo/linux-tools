@@ -100,21 +100,25 @@ enter() {
 
 alias dp='docker system prune -a'
 
-dcp () {
-  vol_name=$1
-  src_path_in_vol=$2
-  fname=$(basename -- $src_path_in_vol)
-  # dest_path_on_host=$3
-  dest_path_on_host=$(pwd)
-  readonly vol_mnt_dir=/cp_temp
-  docker run \
-    --name dcp \
-    --rm \
-    --privileged \
-    --net=host \
-    -v $vol_name:$vol_mnt_dir \
-    -v $dest_path_on_host:$dest_path_on_host \
-    eeacms/rsync \
-      rsync --info=progress2 -a $vol_mnt_dir/$src_path_in_vol $dest_path_on_host
-  sudo chown $USER $dest_path_on_host/$fname
+# dcp () {
+#   vol_name=$1
+#   src_path_in_vol=$2
+#   fname=$(basename -- $src_path_in_vol)
+#   # dest_path_on_host=$3
+#   dest_path_on_host=$(pwd)
+#   readonly vol_mnt_dir=/cp_temp
+#   docker run \
+#     --name dcp \
+#     --rm \
+#     --privileged \
+#     --net=host \
+#     -v $vol_name:$vol_mnt_dir \
+#     -v $dest_path_on_host:$dest_path_on_host \
+#     eeacms/rsync \
+#       rsync --info=progress2 -a $vol_mnt_dir/$src_path_in_vol $dest_path_on_host
+#   sudo chown $USER $dest_path_on_host/$fname
+# }
+
+size () {
+  du -ah $1 | grep -v "/$" | sort -rh
 }
