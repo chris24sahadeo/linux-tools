@@ -21,9 +21,9 @@ else
   PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w$(parse_git_branch)\$ '
 fi
 
-alias chrome='google-chrome'
 
 # Aliases.
+alias chrome='google-chrome'
 alias gcan='git commit --amend --no-edit'
 alias gb='git branch'
 alias gbd='git branch -D'
