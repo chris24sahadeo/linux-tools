@@ -21,7 +21,6 @@ else
   PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w$(parse_git_branch)\$ '
 fi
 
-
 # Aliases.
 alias chrome='google-chrome'
 alias gcan='git commit --amend --no-edit'
@@ -119,6 +118,8 @@ alias dp='docker system prune -a'
 #   sudo chown $USER $dest_path_on_host/$fname
 # }
 
-size () {
+size() {
   du -ah $1 | grep -v "/$" | sort -rh
 }
+
+alias ch="sudo chown -R $USER $PWD"
