@@ -123,3 +123,8 @@ size() {
 }
 
 alias ch="sudo chown -R $USER $PWD"
+
+compress() {
+  # Use all cores.
+  tar -cvf $1.tar.gz $1 --use-compress-prog=pigz
+}
