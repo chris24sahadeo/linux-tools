@@ -1,3 +1,4 @@
+# LXD config for enabling GPU.
 config:
   environment.DISPLAY: :0
   environment.PULSE_SERVER: unix:/home/ubuntu/pulse-native

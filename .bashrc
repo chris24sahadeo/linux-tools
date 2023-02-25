@@ -1,3 +1,5 @@
+# @chris24sahadeo: This file is sourced by .zshrc BEFORE the call to source $ZSH/oh-my-zsh.sh which can overwrite things with the same name setup in this file.
+
 readonly THIS_SCRIPT_DIR="$(SHELL_SESSION_FILE= && cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 # source /etc/profile.d/bash_completion.sh
@@ -12,14 +14,14 @@ readonly THIS_SCRIPT_DIR="$(SHELL_SESSION_FILE= && cd "$(dirname "${BASH_SOURCE[
 # fi
 # unset color_prompt force_color_prompt
 
-parse_git_branch() {
-  git branch 2>/dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
-}
-if [ "$color_prompt" = yes ]; then
-  PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[01;31m\]$(parse_git_branch)\[\033[00m\]\$ '
-else
-  PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w$(parse_git_branch)\$ '
-fi
+# parse_git_branch() {
+#   git branch 2>/dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+# }
+# if [ "$color_prompt" = yes ]; then
+#   PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[01;31m\]$(parse_git_branch)\[\033[00m\]\$ '
+# else
+#   PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w$(parse_git_branch)\$ '
+# fi
 
 # Aliases.
 alias chrome='google-chrome'
