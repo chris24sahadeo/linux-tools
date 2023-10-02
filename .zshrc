@@ -131,6 +131,8 @@ eval "$(zoxide init zsh)"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias dcd="docker compose down"
+alias dcu="docker compose up"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
