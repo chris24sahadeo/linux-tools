@@ -143,3 +143,6 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+# TODO(chris@): Check if on macOS.
+export PATH="$(brew --prefix)/opt/python@3.11/libexec/bin:$PATH"
