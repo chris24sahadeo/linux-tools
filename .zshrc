@@ -145,4 +145,10 @@ esac
 # pnpm end
 
 # TODO(chris@): Check if on macOS.
-export PATH="$(brew --prefix)/opt/python@3.11/libexec/bin:$PATH"
+export PATH="$(brew --prefix)/opt/python@3.10/libexec/bin:$PATH"
+
+if [ -n "$PYTHONPATH" ]; then
+    export PYTHONPATH='/opt/homebrew/Cellar/pdm/2.9.3_1/libexec/lib/python3.10/site-packages/pdm/pep582':$PYTHONPATH
+else
+    export PYTHONPATH='/opt/homebrew/Cellar/pdm/2.9.3_1/libexec/lib/python3.10/site-packages/pdm/pep582'
+fi
