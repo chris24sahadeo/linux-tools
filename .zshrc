@@ -87,7 +87,8 @@ plugins=(
   colored-man-pages # Automatically colorizes all man pages.
   copyfile          # Puts the contents of a file in your system clipboard so you can paste it anywhere.
   git               # Git extras: git-extras gitfast git-flow git-flow-avh git-hubflow git-remote-branch
-  zoxide            # Use the command `z`. Rust based fast file jumping (faster then autojump, uses the same database file pattern matching stuff). Follow install steps here: https://github.com/ajeetdsouza/zoxide
+  # Follow install steps here: https://github.com/ajeetdsouza/zoxide
+  zoxide            # Use the command `z`. Rust based fast file jumping (faster then autojump, uses the same database file pattern matching stuff).
 )
 
 # zoxide Cheatsheet:
@@ -105,6 +106,9 @@ source $ZSH/oh-my-zsh.sh
 
 # NOTE: For completions to work, the above line must be added after compinit is called. You may have to rebuild your completions cache by running rm ~/.zcompdump*; compinit.
 eval "$(zoxide init zsh)"
+
+# zoxide will not work unless this is added to $PATH.
+export PATH="$HOME/.local/bin:$PATH"
 
 # User configuration
 
@@ -145,10 +149,16 @@ esac
 # pnpm end
 
 # TODO(chris@): Check if on macOS.
-export PATH="$(brew --prefix)/opt/python@3.10/libexec/bin:$PATH"
 
-if [ -n "$PYTHONPATH" ]; then
-    export PYTHONPATH='/opt/homebrew/Cellar/pdm/2.9.3_1/libexec/lib/python3.10/site-packages/pdm/pep582':$PYTHONPATH
-else
-    export PYTHONPATH='/opt/homebrew/Cellar/pdm/2.9.3_1/libexec/lib/python3.10/site-packages/pdm/pep582'
+# only run this line if we are on macos
+
+# only run this line if we are on macos
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  export PATH="$(brew --prefix)/opt/python@3.10/libexec/bin:$PATH"
+
+  if [ -n "$PYTHONPATH" ]; then
+      export PYTHONPATH='/opt/homebrew/Cellar/pdm/2.9.3_1/libexec/lib/python3.10/site-packages/pdm/pep582':$PYTHONPATH
+  else
+      export PYTHONPATH='/opt/homebrew/Cellar/pdm/2.9.3_1/libexec/lib/python3.10/site-packages/pdm/pep582'
+  fi  
 fi
