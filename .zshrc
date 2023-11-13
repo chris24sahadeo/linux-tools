@@ -89,6 +89,7 @@ plugins=(
   git               # Git extras: git-extras gitfast git-flow git-flow-avh git-hubflow git-remote-branch
   # Follow install steps here: https://github.com/ajeetdsouza/zoxide
   zoxide            # Use the command `z`. Rust based fast file jumping (faster then autojump, uses the same database file pattern matching stuff).
+  z
 )
 
 # zoxide Cheatsheet:
@@ -104,11 +105,15 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-# NOTE: For completions to work, the above line must be added after compinit is called. You may have to rebuild your completions cache by running rm ~/.zcompdump*; compinit.
-eval "$(zoxide init zsh)"
 
 # zoxide will not work unless this is added to $PATH.
 export PATH="$HOME/.local/bin:$PATH"
+
+autoload -Uz compinit
+compinit -i
+# NOTE: For completions to work, the above line must be added after compinit is called. You may have to rebuild your completions cache by running rm ~/.zcompdump*; compinit.
+eval "$(zoxide init zsh)"
+
 
 # User configuration
 
