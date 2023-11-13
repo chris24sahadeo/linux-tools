@@ -154,11 +154,7 @@ case ":$PATH:" in
 esac
 # pnpm end
 
-# TODO(chris@): Check if on macOS.
-
-# only run this line if we are on macos
-
-# only run this line if we are on macos
+# Only run this line if we are on macos
 if [[ "$OSTYPE" == "darwin"* ]]; then
   export PATH="$(brew --prefix)/opt/python@3.10/libexec/bin:$PATH"
 
