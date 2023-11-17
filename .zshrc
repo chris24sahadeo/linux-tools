@@ -143,11 +143,12 @@ eval "$(zoxide init zsh)"
 alias dcd="docker compose down"
 alias dcu="docker compose up"
 alias dcp="docker compose pull"
+alias dcr="docker compose run"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # pnpm
-export PNPM_HOME="/Users/chris/Library/pnpm"
+export PNPM_HOME="$HOME/pnpm_install"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
