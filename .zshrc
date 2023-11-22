@@ -155,13 +155,6 @@ case ":$PATH:" in
 esac
 # pnpm end
 
-# Only run this line if we are on macos
-if [[ "$OSTYPE" == "darwin"* ]]; then
-  export PATH="$(brew --prefix)/opt/python@3.10/libexec/bin:$PATH"
-
-  if [ -n "$PYTHONPATH" ]; then
-      export PYTHONPATH='/opt/homebrew/Cellar/pdm/2.9.3_1/libexec/lib/python3.10/site-packages/pdm/pep582':$PYTHONPATH
-  else
-      export PYTHONPATH='/opt/homebrew/Cellar/pdm/2.9.3_1/libexec/lib/python3.10/site-packages/pdm/pep582'
-  fi  
-fi
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
