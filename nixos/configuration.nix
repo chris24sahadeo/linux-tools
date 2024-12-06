@@ -27,7 +27,23 @@
     gh
     copyq
     nixos-generators
+    fzf
+    eza
+    glances
+    zoxide
+    ripgrep
+    fd
+    bat
+    tldr
+    lazygit
+    delta
+    jq
   ];
+
+  environment.interactiveShellInit = ''
+    # Your bash settings here
+    eval "$(zoxide init bash)"
+  '';
 
   nixpkgs.config.allowUnfree = true; 
   virtualisation.docker.enable = true;
