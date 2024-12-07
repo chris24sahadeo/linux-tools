@@ -38,7 +38,27 @@
     lazygit
     delta
     jq
+    neovim
   ];
+
+  environment.shellAliases = {
+    ll = "ls -l";
+
+    # git.
+    g = "git";
+    gs = "git status";
+    ga = "git add";
+    gaa = "git add -A";
+    gcm = "git commit --message";
+    gcam = "git commit --all --message";
+    gpl = "git pull";
+    gpu = "git push";
+  };
+
+  environment.variables = {
+    EDITOR = "nvim";
+    VISUAL = "code";
+  };
 
   environment.interactiveShellInit = ''
     # Your bash settings here
