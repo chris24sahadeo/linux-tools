@@ -113,17 +113,17 @@
   
   imports =
     [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix.the-beast
+      ./hardware-configuration.nix.luigi
     ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-   boot.initrd.luks.devices."luks-b8b53034-d87d-44f4-a05e-81181219b9d7".device = "/dev/disk/by-uuid/b8b53034-d87d-44f4-a05e-81181219b9d7";
+#    boot.initrd.luks.devices."luks-b8b53034-d87d-44f4-a05e-81181219b9d7".device = "/dev/disk/by-uuid/b8b53034-d87d-44f4-a05e-81181219b9d7"; # the-beast
 
 #    boot.initrd.luks.devices."luks-636e564f-ece5-4bb0-92ff-7992945f96eb".device = "/dev/disk/by-uuid/636e564f-ece5-4bb0-92ff-7992945f96eb"; # nuc
-   # boot.initrd.luks.devices."luks-ebda0408-492f-4b11-baae-d9667054fe66".device = "/dev/disk/by-uuid/ebda0408-492f-4b11-baae-d9667054fe66"; # luigi
+    boot.initrd.luks.devices."luks-ebda0408-492f-4b11-baae-d9667054fe66".device = "/dev/disk/by-uuid/ebda0408-492f-4b11-baae-d9667054fe66"; # luigi
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
