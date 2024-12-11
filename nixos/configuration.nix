@@ -93,9 +93,9 @@
     ga = "git add";
     gaa = "git add -A";
     gcm = "git commit --message";
-    gcam = "git commit --all --message";
+    gcam = "git add -A && git commit --message";
     gpl = "git pull";
-    gpu = "git push";
+    gph = "git push";
   };
 
   environment.variables = {
