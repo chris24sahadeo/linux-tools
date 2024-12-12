@@ -11,7 +11,7 @@
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
-#    nvtop
+#    nvtop # TODO: move to nvidia config file.
     google-chrome
     vscode
     warp-terminal
@@ -46,11 +46,13 @@
 
 services.tailscale.enable = true;
 
+# FIXME: This doesn't work, and even if it did, it should be part of "home manager" config (TODO).
  programs.git.config.user = {
   name = "Chris Sahadeo";
   email = "chris@virtanatech.com";
 };
 
+# TODO: move to a nvidia config file.
   # START: Nvidia...
   # Load nvidia driver for Xorg and Wayland
 #   services.xserver.videoDrivers = ["nvidia"];
@@ -105,6 +107,7 @@ services.tailscale.enable = true;
     gph = "git push";
   };
 
+  # FIXME: this just doesn't work.
   environment.variables = {
     EDITOR = "nvim";
     visual = "code";
@@ -127,9 +130,8 @@ services.tailscale.enable = true;
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+# TODO: remove once other PCs are reformatted to remove disk level encryption
 #    boot.initrd.luks.devices."luks-b8b53034-d87d-44f4-a05e-81181219b9d7".device = "/dev/disk/by-uuid/b8b53034-d87d-44f4-a05e-81181219b9d7"; # the-beast
-
-#    boot.initrd.luks.devices."luks-636e564f-ece5-4bb0-92ff-7992945f96eb".device = "/dev/disk/by-uuid/636e564f-ece5-4bb0-92ff-7992945f96eb"; # nuc
 #    boot.initrd.luks.devices."luks-ebda0408-492f-4b11-baae-d9667054fe66".device = "/dev/disk/by-uuid/ebda0408-492f-4b11-baae-d9667054fe66"; # luigi
 
   networking.hostName = "nixos"; # Define your hostname.
@@ -203,7 +205,7 @@ services.tailscale.enable = true;
   };
 
   # Install firefox.
-  programs.firefox.enable = true;
+#  programs.firefox.enable = true;
 
   programs.steam.enable = true;
 
