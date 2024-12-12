@@ -95,7 +95,7 @@ services.tailscale.enable = true;
 
   environment.shellAliases = {
     ll = "ls -l";
-
+    vi = "nvim";
     # git.
     g = "git";
     gs = "git status";
