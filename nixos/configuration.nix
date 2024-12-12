@@ -4,12 +4,16 @@
 
 { config, pkgs, ... }:
 
+# TODO: figure out how to disable sleep / suspend OR how to wake up remotely from those states!
 
+ # TODO: move these packages and any other associated useful dev tools to a different file so they can be used in a docker file for setting up dev tools 
+ # see: https://chatgpt.com/c/675b1edf-eb7c-8005-bc1e-1379d7554aa5
 {
   # List packages installed in system profile. To search, run:f
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+tree    
+vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
 #    nvtop # TODO: move to nvidia config file.
     google-chrome
