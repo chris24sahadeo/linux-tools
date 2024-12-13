@@ -36,6 +36,7 @@ vim # Do not forget to add an editor to edit configuration.nix! The Nano editor 
     eza
     glances
     zoxide
+    starship
     ripgrep
     fd
     bat
@@ -47,6 +48,10 @@ vim # Do not forget to add an editor to edit configuration.nix! The Nano editor 
     lshw
     zoom-us
   ];
+
+programs.starship = {
+  enable = true;
+};
 
 services.tailscale.enable = true;
 
@@ -96,6 +101,12 @@ services.tailscale.enable = true;
 #  hardware.opengl.mesaPackage = pkgs.mesa;
 
   # END: Nvidia...
+  
+#  programs.bash = {
+ #   promptInit = ''
+ #     PS1='\w $ '
+ #   '';
+ # };
 
   environment.shellAliases = {
     ll = "ls -l";
