@@ -18,7 +18,7 @@ vim # Do not forget to add an editor to edit configuration.nix! The Nano editor 
 #    nvtop # TODO: move to nvidia config file.
     google-chrome
     vscode
-    warp-terminal
+#    warp-terminal
     docker
     whatsapp-for-linux
     btop
@@ -100,6 +100,11 @@ services.tailscale.enable = true;
   environment.shellAliases = {
     ll = "ls -l";
     vi = "nvim";
+
+    # nixos.
+    switch = "sudo nixos-rebuild switch";
+    ntest = "sudo nixos-rebuild test";
+
     # git.
     g = "git";
     gs = "git status";
