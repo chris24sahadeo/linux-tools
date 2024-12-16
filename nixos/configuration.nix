@@ -12,7 +12,7 @@
   # List packages installed in system profile. To search, run:f
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-# lunarvim
+# lunarvim # FIXME: neovim alias error on stable.
 # vimPlugins.LazyVim
 tree    
 vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
@@ -60,9 +60,13 @@ programs.neovim = {
   defaultEditor = true;
   viAlias = true;
   vimAlias = true;
-  #plugins = [
-  #    pkgs.vimPlugins.LazyVim
-  #];
+  configure = {
+    packages.myVimPackage = with pkgs.vimPlugins; {
+      start = [ ctrlp 
+       nvim-tree-lua
+      ];
+    };
+    };
 };
 
 services.tailscale.enable = true;
