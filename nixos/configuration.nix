@@ -12,6 +12,8 @@
   # List packages installed in system profile. To search, run:f
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+# lunarvim
+# vimPlugins.LazyVim
 tree    
 vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
@@ -45,13 +47,22 @@ vim # Do not forget to add an editor to edit configuration.nix! The Nano editor 
     lazygit
     delta
     jq
-    neovim
     lshw
     zoom-us
   ];
 
 programs.starship = {
   enable = true;
+};
+
+programs.neovim = {
+  enable = true;
+  defaultEditor = true;
+  viAlias = true;
+  vimAlias = true;
+  #plugins = [
+  #    pkgs.vimPlugins.LazyVim
+  #];
 };
 
 services.tailscale.enable = true;
@@ -110,7 +121,12 @@ services.tailscale.enable = true;
 
   environment.shellAliases = {
     ll = "ls -l";
-    vi = "nvim";
+    # vi = "nvim";
+
+    # docker.
+    dcu = "docker compose up";
+    dcd = "docker compose down";
+    ld = "lazydocker";
 
     # nixos.
     edit = "sudo vi /etc/nixos/configuration.nix";
@@ -118,6 +134,7 @@ services.tailscale.enable = true;
     ntest = "sudo nixos-rebuild test";
 
     # git.
+    lg = "lazygit";
     g = "git";
     gs = "git status";
     ga = "git add";
@@ -130,8 +147,8 @@ services.tailscale.enable = true;
 
   # FIXME: this just doesn't work.
   environment.variables = {
-    EDITOR = "nvim";
-    visual = "code";
+    #EDITOR = "nvim";
+    #visual = "code";
   };
 
   environment.interactiveShellInit = ''
