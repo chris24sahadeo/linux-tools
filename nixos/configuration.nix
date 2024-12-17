@@ -14,6 +14,7 @@
   environment.systemPackages = with pkgs; [
 # lunarvim # FIXME: neovim alias error on stable.
 # vimPlugins.LazyVim
+kanata
 tree    
 vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
@@ -50,6 +51,22 @@ vim # Do not forget to add an editor to edit configuration.nix! The Nano editor 
     lshw
     zoom-us
   ];
+
+
+
+  services.kanata = {
+    enable = true;
+  keyboards.default.config = ''
+    ;; Map RCtrl to Menu key
+    (defsrc
+      caps
+    )
+
+   (deflayer base
+      esc
+    )
+  '';
+  };
 
 programs.starship = {
   enable = true;
@@ -194,7 +211,7 @@ services.tailscale.enable = true;
   # Enable the X11 windowing system.
   services.xserver = {
     enable=true;
-    # xkbOptions = "caps:escape";  # This specific option swaps Caps Lock with Escape
+#    xkbOptions = "caps:swapescape";  # This specific option swaps Caps Lock with Escape
 
   };
 
@@ -210,6 +227,7 @@ services.tailscale.enable = true;
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
+   #  options = "caps:swapescape";
     variant = "";
   };
 
@@ -239,7 +257,7 @@ services.tailscale.enable = true;
   users.users.chris = {
     isNormalUser = true;
     description = "chris";
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" "input" "uinput" ];
     packages = with pkgs; [
     #  thunderbird
     ];
